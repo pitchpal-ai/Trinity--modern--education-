@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trinity Modern Educations – Speed Maths & Abacus Brain Development</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple-deep: #3a006f;
+    --purple-mid: #6200b3;
+    --purple-bright: #8b00ff;
+    --gold: #f5c842;
+    --gold-light: #ffe57a;
+    --white: #ffffff;
+    --off-white: #f9f4ff;
+    --text-dark: #1a0033;
+  }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘Nunito’, sans-serif;
+background: var(–purple-deep);
+color: var(–white);
+overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+position: relative;
+min-height: 100vh;
+background: linear-gradient(135deg, #1a003a 0%, #5200a0 50%, #3a006f 100%);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 40px 20px 60px;
+overflow: hidden;
+}
+.hero::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: radial-gradient(ellipse at 70% 30%, rgba(245,200,66,.18) 0%, transparent 60%),
+radial-gradient(ellipse at 20% 80%, rgba(139,0,255,.25) 0%, transparent 50%);
+pointer-events: none;
+}
+.stars {
+position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+}
+.stars span {
+position: absolute;
+border-radius: 50%;
+background: var(–gold-light);
+animation: twinkle var(–dur, 3s) ease-in-out infinite;
+opacity: 0;
+}
+@keyframes twinkle { 0%,100%{opacity:0} 50%{opacity:var(–op,0.7)} }
+
+.iso-badge {
+position: absolute; top: 22px; right: 28px;
+background: var(–gold);
+color: var(–purple-deep);
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 0.75rem;
+padding: 6px 10px;
+border-radius: 50%;
+width: 62px; height: 62px;
+display: flex; flex-direction: column;
+align-items: center; justify-content: center;
+line-height: 1.1;
+box-shadow: 0 0 20px rgba(245,200,66,.5);
+animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{box-shadow:0 0 20px rgba(245,200,66,.5)} 50%{box-shadow:0 0 40px rgba(245,200,66,.9)} }
+
+.logo-wrap { animation: fadeDown .8s ease both; }
+@keyframes fadeDown { from{opacity:0;transform:translateY(-30px)} to{opacity:1;transform:none} }
+.logo-wrap h1 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(2.2rem, 6vw, 4rem);
+line-height: 1;
+letter-spacing: 2px;
+}
+.logo-wrap h1 span.gold { color: var(–gold); }
+.logo-wrap p.tagline {
+font-size: 0.85rem;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: rgba(255,255,255,.6);
+margin-top: 4px;
+}
+
+.hero-headline {
+margin-top: 28px;
+animation: fadeDown .9s .2s ease both;
+}
+.hero-headline h2 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(3rem, 10vw, 7rem);
+line-height: .95;
+color: var(–white);
+text-shadow: 0 0 60px rgba(245,200,66,.3);
+}
+.hero-headline h2 .amp { color: var(–gold); font-size: .7em; }
+.hero-headline h2 .sub {
+display: block;
+font-size: clamp(1.4rem, 4.5vw, 3.2rem);
+color: var(–gold-light);
+letter-spacing: 1px;
+}
+
+.live-badge {
+margin-top: 20px;
+display: inline-block;
+background: var(–gold);
+color: var(–purple-deep);
+font-weight: 900;
+font-size: 1rem;
+padding: 10px 28px;
+border-radius: 50px;
+letter-spacing: 1px;
+animation: fadeDown .9s .4s ease both;
+box-shadow: 0 4px 24px rgba(245,200,66,.5);
+}
+
+.hero-cta {
+margin-top: 32px;
+display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+animation: fadeDown .9s .6s ease both;
+}
+.btn-primary, .btn-secondary {
+padding: 14px 36px;
+border-radius: 50px;
+font-family: ‘Raleway’, sans-serif;
+font-weight: 900;
+font-size: 1.05rem;
+cursor: pointer;
+border: none;
+transition: transform .2s, box-shadow .2s;
+text-decoration: none;
+}
+.btn-primary {
+background: var(–gold);
+color: var(–purple-deep);
+box-shadow: 0 6px 28px rgba(245,200,66,.5);
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(245,200,66,.7); }
+.btn-secondary {
+background: transparent;
+color: var(–white);
+border: 2px solid rgba(255,255,255,.5);
+}
+.btn-secondary:hover { border-color: var(–gold); color: var(–gold); transform: translateY(-3px); }
+
+/* ── NAV ── */
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+background: rgba(26,0,51,.85);
+backdrop-filter: blur(12px);
+padding: 14px 40px;
+display: flex; align-items: center; justify-content: space-between;
+border-bottom: 1px solid rgba(245,200,66,.15);
+}
+nav .nav-logo { font-family:‘Bebas Neue’,sans-serif; font-size:1.4rem; color:var(–gold); letter-spacing:2px; }
+nav ul { list-style:none; display:flex; gap:28px; }
+nav ul li a {
+color:rgba(255,255,255,.75); text-decoration:none; font-weight:700; font-size:.9rem;
+letter-spacing:1px; transition:color .2s;
+}
+nav ul li a:hover { color:var(–gold); }
+nav .nav-book {
+background:var(–gold); color:var(–purple-deep);
+padding:9px 22px; border-radius:50px; font-weight:900;
+font-size:.9rem; text-decoration:none; transition:transform .2s;
+}
+nav .nav-book:hover { transform:scale(1.05); }
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+.hamburger span { width:24px; height:2px; background:var(–white); border-radius:2px; }
+
+/* ── SECTION BASE ── */
+section { padding: 80px 20px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-title {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(2rem, 5vw, 3.5rem);
+color: var(–gold);
+text-align: center;
+margin-bottom: 12px;
+letter-spacing: 2px;
+}
+.section-sub {
+text-align: center;
+color: rgba(255,255,255,.65);
+font-size: 1rem;
+margin-bottom: 50px;
+max-width: 560px;
+margin-left: auto; margin-right: auto;
+}
+
+/* ── COURSES ── */
+#courses { background: linear-gradient(180deg, #2a005a 0%, #1a003a 100%); }
+.courses-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 28px;
+}
+.course-card {
+background: linear-gradient(135deg, rgba(98,0,179,.35), rgba(26,0,51,.7));
+border: 1px solid rgba(245,200,66,.25);
+border-radius: 20px;
+padding: 36px 30px;
+position: relative;
+overflow: hidden;
+transition: transform .3s, box-shadow .3s;
+}
+.course-card::before {
+content: ‘’;
+position: absolute; top: -40px; right: -40px;
+width: 120px; height: 120px;
+background: radial-gradient(circle, rgba(245,200,66,.15), transparent 70%);
+border-radius: 50%;
+}
+.course-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(245,200,66,.15); }
+.course-card .badge {
+display: inline-block;
+background: var(–gold);
+color: var(–purple-deep);
+font-size: .72rem;
+font-weight: 900;
+padding: 4px 12px;
+border-radius: 20px;
+letter-spacing: 1px;
+text-transform: uppercase;
+margin-bottom: 16px;
+}
+.course-card h3 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.9rem;
+color: var(–white);
+margin-bottom: 8px;
+letter-spacing: 1px;
+}
+.course-card .age { color: var(–gold-light); font-weight: 700; font-size: .9rem; margin-bottom: 14px; }
+.course-card ul { padding-left: 18px; color: rgba(255,255,255,.8); font-size: .9rem; line-height: 1.8; }
+.course-card .levels {
+margin-top: 18px;
+background: rgba(255,255,255,.06);
+border-radius: 10px;
+padding: 12px 16px;
+font-size: .88rem;
+color: rgba(255,255,255,.7);
+line-height: 1.7;
+}
+.course-card .levels strong { color: var(–gold-light); }
+
+/* ── PRICING ── */
+#pricing { background: #1a003a; }
+.pricing-box {
+max-width: 540px; margin: 0 auto;
+background: linear-gradient(135deg, #5200a0, #3a006f);
+border: 2px solid var(–gold);
+border-radius: 24px;
+padding: 50px 40px;
+text-align: center;
+box-shadow: 0 0 80px rgba(245,200,66,.2);
+position: relative;
+overflow: hidden;
+}
+.pricing-box::after {
+content: ‘★ BEST VALUE ★’;
+position: absolute; top: 18px; right: -30px;
+background: var(–gold);
+color: var(–purple-deep);
+font-weight: 900; font-size: .75rem;
+padding: 5px 40px;
+transform: rotate(35deg);
+letter-spacing: 1px;
+}
+.price-amount {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 5rem;
+color: var(–gold);
+line-height: 1;
+}
+.price-amount span.currency { font-size: 2.5rem; vertical-align: top; margin-top: 14px; display: inline-block; }
+.price-period { color: rgba(255,255,255,.6); font-size: .95rem; margin-top: 4px; margin-bottom: 28px; }
+.pricing-features { list-style: none; text-align: left; margin-bottom: 32px; }
+.pricing-features li {
+padding: 10px 0;
+border-bottom: 1px solid rgba(255,255,255,.1);
+color: rgba(255,255,255,.85);
+font-size: .95rem;
+display: flex; gap: 10px; align-items: center;
+}
+.pricing-features li::before { content: ‘✦’; color: var(–gold); font-size: .7rem; flex-shrink: 0; }
+
+/* ── HIGHLIGHTS ── */
+#highlights { background: linear-gradient(135deg, #2a005a, #1a003a); }
+.highlights-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 22px;
+}
+.highlight-card {
+background: rgba(98,0,179,.2);
+border: 1px solid rgba(245,200,66,.2);
+border-radius: 16px;
+padding: 30px 24px;
+text-align: center;
+transition: border-color .3s, transform .3s;
+}
+.highlight-card:hover { border-color: var(–gold); transform: translateY(-4px); }
+.highlight-card .icon { font-size: 2.4rem; margin-bottom: 14px; }
+.highlight-card h4 { font-family:‘Bebas Neue’,sans-serif; font-size:1.4rem; color:var(–gold); margin-bottom:8px; letter-spacing:1px; }
+.highlight-card p { color:rgba(255,255,255,.7); font-size:.88rem; line-height:1.6; }
+
+/* ── BOOKING ── */
+#booking { background: #1a003a; }
+.booking-form {
+max-width: 680px; margin: 0 auto;
+background: linear-gradient(135deg, rgba(82,0,160,.4), rgba(26,0,51,.8));
+border: 1px solid rgba(245,200,66,.3);
+border-radius: 24px;
+padding: 50px 44px;
+box-shadow: 0 0 60px rgba(139,0,255,.2);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-group { display: flex; flex-direction: column; margin-bottom: 20px; }
+.form-group label {
+font-size: .82rem; font-weight: 700; letter-spacing: 1px;
+text-transform: uppercase; color: var(–gold-light); margin-bottom: 7px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+background: rgba(255,255,255,.07);
+border: 1px solid rgba(245,200,66,.3);
+color: var(–white);
+padding: 13px 16px;
+border-radius: 10px;
+font-family: ‘Nunito’, sans-serif;
+font-size: .95rem;
+transition: border-color .2s, background .2s;
+outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+border-color: var(–gold);
+background: rgba(255,255,255,.12);
+}
+.form-group select option { background: #3a006f; }
+.form-group textarea { resize: vertical; min-height: 90px; }
+
+/* ── PAYMENT ── */
+#payment { background: linear-gradient(180deg, #1a003a 0%, #0d001f 100%); }
+.payment-wrap { max-width: 680px; margin: 0 auto; }
+.payment-methods {
+display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+margin-bottom: 30px;
+}
+.pay-method {
+background: rgba(255,255,255,.06);
+border: 2px solid rgba(245,200,66,.2);
+border-radius: 14px;
+padding: 18px 12px;
+text-align: center;
+cursor: pointer;
+transition: all .25s;
+font-size: .85rem;
+color: rgba(255,255,255,.7);
+font-weight: 700;
+}
+.pay-method .pay-icon { font-size: 1.8rem; display: block; margin-bottom: 6px; }
+.pay-method:hover, .pay-method.active {
+border-color: var(–gold);
+background: rgba(245,200,66,.1);
+color: var(–gold);
+transform: translateY(-3px);
+}
+.card-form {
+background: rgba(255,255,255,.05);
+border: 1px solid rgba(245,200,66,.2);
+border-radius: 18px;
+padding: 32px 36px;
+}
+.card-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; }
+.card-number-wrap { position: relative; }
+.card-number-wrap .card-icons {
+position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+display: flex; gap: 5px; font-size: 1.1rem;
+}
+.secure-notice {
+margin-top: 22px;
+background: rgba(245,200,66,.08);
+border: 1px solid rgba(245,200,66,.2);
+border-radius: 10px;
+padding: 12px 18px;
+display: flex; align-items: center; gap: 10px;
+font-size: .82rem; color: rgba(255,255,255,.65);
+}
+.secure-notice .lock { font-size: 1.1rem; color: var(–gold); }
+.pay-btn {
+width: 100%; margin-top: 24px;
+padding: 16px;
+background: var(–gold);
+color: var(–purple-deep);
+border: none;
+border-radius: 14px;
+font-family: ‘Raleway’, sans-serif;
+font-weight: 900;
+font-size: 1.15rem;
+cursor: pointer;
+transition: transform .2s, box-shadow .2s;
+letter-spacing: .5px;
+display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.pay-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,200,66,.5); }
+
+/* ── CONTACT ── */
+#contact { background: #0d001f; text-align: center; }
+.contact-inner {
+max-width: 600px; margin: 0 auto;
+background: linear-gradient(135deg, rgba(82,0,160,.35), rgba(26,0,51,.8));
+border: 1px solid rgba(245,200,66,.3);
+border-radius: 24px;
+padding: 50px 40px;
+}
+.contact-inner h3 { font-family:‘Bebas Neue’,sans-serif; font-size:2.2rem; color:var(–gold); margin-bottom:10px; letter-spacing:2px; }
+.contact-inner p { color:rgba(255,255,255,.7); margin-bottom:30px; }
+.contact-items { display:flex; flex-direction:column; gap:14px; }
+.contact-item {
+display:flex; align-items:center; gap:14px;
+background:rgba(255,255,255,.05); border:1px solid rgba(245,200,66,.2);
+border-radius:12px; padding:14px 20px;
+text-decoration:none; color:var(–white);
+font-weight:700; font-size:.95rem;
+transition:border-color .2s, background .2s;
+}
+.contact-item:hover { border-color:var(–gold); background:rgba(245,200,66,.08); }
+.contact-item .ci-icon { font-size:1.5rem; color:var(–gold); flex-shrink:0; }
+
+/* ── FOOTER ── */
+footer {
+background: #07000f;
+text-align: center;
+padding: 28px 20px;
+color: rgba(255,255,255,.35);
+font-size: .82rem;
+border-top: 1px solid rgba(245,200,66,.1);
+}
+footer span.gold { color: var(–gold); }
+
+/* ── MODAL ── */
+.modal-overlay {
+position: fixed; inset: 0;
+background: rgba(0,0,0,.75);
+backdrop-filter: blur(6px);
+z-index: 500;
+display: flex; align-items: center; justify-content: center;
+padding: 20px;
+opacity: 0; pointer-events: none;
+transition: opacity .3s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+background: linear-gradient(135deg, #3a006f, #1a003a);
+border: 1px solid rgba(245,200,66,.4);
+border-radius: 24px;
+padding: 50px 40px;
+max-width: 480px; width: 100%;
+text-align: center;
+transform: scale(.9);
+transition: transform .3s;
+position: relative;
+}
+.modal-overlay.open .modal { transform: scale(1); }
+.modal .close-btn {
+position: absolute; top: 18px; right: 22px;
+background: none; border: none; color: rgba(255,255,255,.5);
+font-size: 1.6rem; cursor: pointer; transition: color .2s; line-height:1;
+}
+.modal .close-btn:hover { color: var(–gold); }
+.modal h3 { font-family:‘Bebas Neue’,sans-serif; font-size:2.2rem; color:var(–gold); margin-bottom:12px; letter-spacing:2px; }
+.modal p { color:rgba(255,255,255,.7); margin-bottom:22px; font-size:.95rem; }
+.modal .success-icon { font-size:4rem; margin-bottom:16px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+nav ul { display:none; }
+.hamburger { display:flex; }
+.form-row { grid-template-columns: 1fr; }
+.card-row { grid-template-columns: 1fr 1fr; }
+.payment-methods { grid-template-columns: 1fr 1fr; }
+.booking-form, .card-form { padding: 28px 22px; }
+.pricing-box { padding: 36px 24px; }
+}
+@media (max-width: 480px) {
+.card-row { grid-template-columns: 1fr; }
+.payment-methods { grid-template-columns: repeat(3,1fr); }
+}
+
+/* scroll reveal */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <div class="nav-logo">Trinity Modern Educations</div>
+  <ul>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#highlights">Why Us</a></li>
+    <li><a href="#booking">Book</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#booking" class="nav-book">Book Now</a>
+  <div class="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="stars" id="stars"></div>
+  <div class="iso-badge">CERTIFIED<br>ISO<br>9001:2015</div>
+
+  <div class="logo-wrap">
+    <h1><span class="gold">TRINITY</span> MODERN<br>EDUCATIONS</h1>
+    <p class="tagline">ISO 9001:2015 Certified · Live Online Learning</p>
+  </div>
+
+  <div class="hero-headline">
+    <h2>
+      Speed Maths
+      <span class="amp">&</span>
+      <span class="sub">Abacus Brain Development</span>
+    </h2>
+  </div>
+
+  <div class="live-badge">🌐 Live Online Classes Available</div>
+
+  <div class="hero-cta">
+    <a href="#booking" class="btn-primary">Book a Free Trial</a>
+    <a href="#courses" class="btn-secondary">Explore Courses</a>
+  </div>
+</section>
+
+<!-- COURSES -->
+
+<section id="courses">
+  <div class="container">
+    <h2 class="section-title reveal">Our Programmes</h2>
+    <p class="section-sub reveal">World-class maths and cognitive development programmes delivered live online</p>
+
+```
+<div class="courses-grid">
+  <div class="course-card reveal">
+    <span class="badge">Grade 5 Onwards</span>
+    <h3>Speed Maths Programme</h3>
+    <p class="age">Suitable from 5th Grade onwards</p>
+    <ul>
+      <li>Calculate quickly & accurately</li>
+      <li>Mental shortcuts & tricks</li>
+      <li>Logical thinking development</li>
+      <li>Analytical skill building</li>
+    </ul>
+    <div class="levels">
+      <strong>Structure:</strong> 4 Levels · <strong>Duration:</strong> 6 months each<br>
+      Certificate awarded after each level
+    </div>
+  </div>
+
+  <div class="course-card reveal">
+    <span class="badge">Ages 5–16</span>
+    <h3>Abacus Brain Development</h3>
+    <p class="age">Age group: 5 to 16 years</p>
+    <ul>
+      <li>Boost concentration & focus</li>
+      <li>Improve speed & accuracy</li>
+      <li>Enhance creativity & memory power</li>
+      <li>Develop observation skills</li>
+    </ul>
+    <div class="levels">
+      <strong>Structure:</strong> Bud Level (Zero) to Level 8<br>
+      <strong>Duration:</strong> 6 months per level · Certificate per level
+    </div>
+  </div>
+
+  <div class="course-card reveal">
+    <span class="badge">Best Value</span>
+    <h3>Combined Course</h3>
+    <p class="age">Both programmes together</p>
+    <ul>
+      <li>Full Speed Maths curriculum</li>
+      <li>Full Abacus Brain Development</li>
+      <li>Discounted combined pricing</li>
+      <li>International competition access</li>
+    </ul>
+    <div class="levels">
+      <strong>Special pricing available</strong> for combined enrolment.<br>
+      Contact us for tailored options.
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- PRICING -->
+
+<section id="pricing">
+  <div class="container">
+    <h2 class="section-title reveal">Simple, Clear Pricing</h2>
+    <p class="section-sub reveal">No hidden fees — invest in your child's future today</p>
+
+```
+<div class="pricing-box reveal">
+  <div class="price-amount"><span class="currency">£</span>12.50</div>
+  <div class="price-period">Per Week · Billed Monthly</div>
+
+  <ul class="pricing-features">
+    <li>Live online sessions with certified instructors</li>
+    <li>Certificate awarded after each level</li>
+    <li>Access to international competitions</li>
+    <li>Speed Maths OR Abacus programme</li>
+    <li>Progress tracking & feedback</li>
+    <li>Combined course options available</li>
+  </ul>
+
+  <a href="#booking" class="btn-primary" style="display:inline-block;text-decoration:none;">Enrol Now — £12.50/week</a>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+
+<section id="highlights">
+  <div class="container">
+    <h2 class="section-title reveal">Why Choose Trinity?</h2>
+    <p class="section-sub reveal">We combine rigorous methodology with joyful learning</p>
+
+```
+<div class="highlights-grid">
+  <div class="highlight-card reveal">
+    <div class="icon">🏆</div>
+    <h4>Certified Excellence</h4>
+    <p>ISO 9001:2015 certified institution ensuring top-quality education standards.</p>
+  </div>
+  <div class="highlight-card reveal">
+    <div class="icon">🌐</div>
+    <h4>Live Online Learning</h4>
+    <p>Real-time interactive sessions from the comfort of your home — worldwide access.</p>
+  </div>
+  <div class="highlight-card reveal">
+    <div class="icon">🎓</div>
+    <h4>Level Certificates</h4>
+    <p>Earn a certificate after completing each level — recognised achievement milestones.</p>
+  </div>
+  <div class="highlight-card reveal">
+    <div class="icon">🌍</div>
+    <h4>International Competitions</h4>
+    <p>We conduct international-level competitions in Abacus and Speed Maths.</p>
+  </div>
+  <div class="highlight-card reveal">
+    <div class="icon">🧠</div>
+    <h4>Holistic Brain Development</h4>
+    <p>Builds concentration, memory, creativity, speed, and analytical thinking together.</p>
+  </div>
+  <div class="highlight-card reveal">
+    <div class="icon">👨‍👩‍👧</div>
+    <h4>Expert Guidance</h4>
+    <p>Led by Joseph Joel Jude — dedicated to giving every child the best guide for future success.</p>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- BOOKING -->
+
+<section id="booking">
+  <div class="container">
+    <h2 class="section-title reveal">Book Your Free Trial</h2>
+    <p class="section-sub reveal">Fill in the form below and we'll be in touch to confirm your free trial session</p>
+
+```
+<div class="booking-form reveal">
+  <div class="form-row">
+    <div class="form-group">
+      <label>Parent / Guardian Name</label>
+      <input type="text" placeholder="Full name" id="parentName">
+    </div>
+    <div class="form-group">
+      <label>Child's Name</label>
+      <input type="text" placeholder="Child's full name" id="childName">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" placeholder="your@email.com" id="email">
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" placeholder="+44 …" id="phone">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label>Child's Age</label>
+      <select id="age">
+        <option value="">Select age…</option>
+        <option>5 years</option><option>6 years</option><option>7 years</option>
+        <option>8 years</option><option>9 years</option><option>10 years</option>
+        <option>11 years</option><option>12 years</option><option>13 years</option>
+        <option>14 years</option><option>15 years</option><option>16 years</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Programme Interest</label>
+      <select id="programme">
+        <option value="">Select programme…</option>
+        <option>Speed Maths Programme</option>
+        <option>Abacus Brain Development</option>
+        <option>Combined Course</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Preferred Trial Session Time</label>
+    <select id="slot">
+      <option value="">Select a time slot…</option>
+      <option>Weekday Morning (9am–12pm)</option>
+      <option>Weekday Afternoon (12pm–4pm)</option>
+      <option>Weekday Evening (4pm–8pm)</option>
+      <option>Saturday Morning (9am–12pm)</option>
+      <option>Saturday Afternoon (12pm–4pm)</option>
+      <option>Sunday Morning (9am–12pm)</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Any Message or Questions (Optional)</label>
+    <textarea placeholder="Tell us anything you'd like us to know…" id="message"></textarea>
+  </div>
+
+  <button class="btn-primary" style="width:100%;border-radius:12px;font-size:1.05rem;" onclick="submitBooking()">
+    ✦ Request Free Trial Session
+  </button>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- PAYMENT -->
+
+<section id="payment">
+  <div class="container">
+    <h2 class="section-title reveal">Secure Enrolment & Payment</h2>
+    <p class="section-sub reveal">Only <strong style="color:var(--gold)">£12.50/week</strong> — billed monthly. Choose your preferred payment method.</p>
+
+```
+<div class="payment-wrap reveal">
+  <div class="payment-methods">
+    <div class="pay-method active" onclick="selectMethod(this)">
+      <span class="pay-icon">💳</span>
+      Card
+    </div>
+    <div class="pay-method" onclick="selectMethod(this)">
+      <span class="pay-icon">🏦</span>
+      Bank Transfer
+    </div>
+    <div class="pay-method" onclick="selectMethod(this)">
+      <span class="pay-icon">📱</span>
+      PayPal
+    </div>
+  </div>
+
+  <div class="card-form" id="cardForm">
+    <div class="form-group">
+      <label>Name on Card</label>
+      <input type="text" placeholder="As it appears on your card">
+    </div>
+    <div class="form-group card-number-wrap">
+      <label>Card Number</label>
+      <input type="text" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)">
+      <div class="card-icons">💳</div>
+    </div>
+    <div class="card-row">
+      <div class="form-group">
+        <label>Expiry Date</label>
+        <input type="text" placeholder="MM / YY" maxlength="7" oninput="formatExpiry(this)">
+      </div>
+      <div class="form-group">
+        <label>CVV</label>
+        <input type="password" placeholder="•••" maxlength="4">
+      </div>
+    </div>
+
+    <div class="form-group" style="margin-top:8px">
+      <label>Select Course for Payment</label>
+      <select>
+        <option>Speed Maths Programme – £12.50/week</option>
+        <option>Abacus Brain Development – £12.50/week</option>
+        <option>Combined Course – Contact for pricing</option>
+      </select>
+    </div>
+
+    <div class="secure-notice">
+      <span class="lock">🔒</span>
+      Your payment is encrypted with 256-bit SSL. We never store your card details.
+    </div>
+
+    <button class="pay-btn" onclick="processPayment()">
+      🔒 Pay £54.17 / Month (£12.50 × 4 weeks)
+    </button>
+  </div>
+
+  <div class="card-form" id="bankForm" style="display:none">
+    <h4 style="color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:1.5rem;margin-bottom:20px;letter-spacing:1px;">Bank Transfer Details</h4>
+    <div style="background:rgba(255,255,255,.06);border-radius:12px;padding:22px 24px;line-height:2;font-size:.95rem;color:rgba(255,255,255,.8);">
+      <div><span style="color:var(--gold-light);font-weight:700;">Account Name:</span> Trinity Modern Educations</div>
+      <div><span style="color:var(--gold-light);font-weight:700;">Sort Code:</span> XX-XX-XX</div>
+      <div><span style="color:var(--gold-light);font-weight:700;">Account Number:</span> XXXXXXXX</div>
+      <div><span style="color:var(--gold-light);font-weight:700;">Reference:</span> Your child's full name</div>
+      <div><span style="color:var(--gold-light);font-weight:700;">Amount:</span> £54.17 / month</div>
+    </div>
+    <div class="secure-notice" style="margin-top:18px;">
+      <span class="lock">ℹ️</span>
+      Once transferred, email your payment confirmation to us and we'll activate your account within 24 hours.
+    </div>
+    <button class="pay-btn" onclick="showModal('bank')">✉️ Email Confirmation to Us</button>
+  </div>
+
+  <div class="card-form" id="paypalForm" style="display:none">
+    <div style="text-align:center;padding:20px 0;">
+      <div style="font-size:3rem;margin-bottom:16px;">📱</div>
+      <p style="color:rgba(255,255,255,.75);margin-bottom:28px;font-size:.95rem;">Click below to complete your payment securely via PayPal. You'll be redirected to PayPal's secure checkout.</p>
+      <button class="pay-btn" onclick="showModal('paypal')" style="max-width:360px;margin:0 auto;">
+        Pay via PayPal – £54.17/month
+      </button>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title reveal">Get in Touch</h2>
+    <div class="contact-inner reveal">
+      <h3>Contact Joseph Joel Jude</h3>
+      <p>Have questions? We're here to help your child begin their journey to mathematical excellence.</p>
+      <div class="contact-items">
+        <a href="tel:+447367060287" class="contact-item">
+          <span class="ci-icon">📞</span>
+          +44 7367 060287
+        </a>
+        <a href="tel:+447404127483" class="contact-item">
+          <span class="ci-icon">📞</span>
+          +44 7404 127483
+        </a>
+        <a href="mailto:info@trinitymoderneducations.com" class="contact-item">
+          <span class="ci-icon">✉️</span>
+          info@trinitymoderneducations.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>© 2026 <span class="gold">Trinity Modern Educations</span>. ISO 9001:2015 Certified. All rights reserved.</p>
+  <p style="margin-top:6px">Live Online Speed Maths & Abacus Brain Development · UK</p>
+</footer>
+
+<!-- SUCCESS MODAL -->
+
+<div class="modal-overlay" id="successModal">
+  <div class="modal">
+    <button class="close-btn" onclick="closeModal()">×</button>
+    <div class="success-icon" id="modalIcon">🎉</div>
+    <h3 id="modalTitle">Booking Confirmed!</h3>
+    <p id="modalMsg">Thank you! We'll be in touch shortly to confirm your free trial session. We're excited to start this journey with your child!</p>
+    <button class="btn-primary" onclick="closeModal()" style="width:100%;border-radius:12px;margin-top:8px;">Close</button>
+  </div>
+</div>
+
+<script>
+  /* Stars */
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 60; i++) {
+    const s = document.createElement('span');
+    const size = Math.random() * 3 + 1;
+    s.style.cssText = `
+      width:${size}px;height:${size}px;
+      top:${Math.random()*100}%;left:${Math.random()*100}%;
+      --dur:${2+Math.random()*4}s;--op:${0.3+Math.random()*0.7};
+      animation-delay:${Math.random()*5}s;
+    `;
+    starsEl.appendChild(s);
+  }
+
+  /* Scroll reveal */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* Mobile nav */
+  function toggleNav() {
+    const ul = document.querySelector('nav ul');
+    ul.style.display = ul.style.display === 'flex' ? 'none' : 'flex';
+    ul.style.flexDirection = 'column';
+    ul.style.position = 'fixed';
+    ul.style.top = '60px'; ul.style.right = '0';
+    ul.style.background = 'rgba(26,0,51,.97)';
+    ul.style.padding = '20px 30px';
+    ul.style.borderRadius = '0 0 0 16px';
+    ul.style.gap = '18px';
+  }
+
+  /* Payment method toggle */
+  function selectMethod(el) {
+    document.querySelectorAll('.pay-method').forEach(m => m.classList.remove('active'));
+    el.classList.add('active');
+    const forms = ['cardForm','bankForm','paypalForm'];
+    forms.forEach(f => document.getElementById(f).style.display='none');
+    const idx = Array.from(document.querySelectorAll('.pay-method')).indexOf(el);
+    document.getElementById(forms[idx]).style.display='block';
+  }
+
+  /* Format card number */
+  function formatCard(el) {
+    let v = el.value.replace(/\D/g,'').substring(0,16);
+    el.value = v.replace(/(.{4})/g,'$1 ').trim();
+  }
+  function formatExpiry(el) {
+    let v = el.value.replace(/\D/g,'').substring(0,4);
+    if (v.length >= 2) v = v.substring(0,2) + ' / ' + v.substring(2);
+    el.value = v;
+  }
+
+  /* Booking submit */
+  function submitBooking() {
+    const name = document.getElementById('parentName').value;
+    const child = document.getElementById('childName').value;
+    const email = document.getElementById('email').value;
+    if (!name || !child || !email) {
+      alert('Please fill in your name, child\'s name, and email address.');
+      return;
+    }
+    showModal('booking');
+  }
+
+  /* Payment process */
+  function processPayment() {
+    showModal('payment');
+  }
+
+  /* Modal */
+  function showModal(type) {
+    const modal = document.getElementById('successModal');
+    const icon = document.getElementById('modalIcon');
+    const title = document.getElementById('modalTitle');
+    const msg = document.getElementById('modalMsg');
+
+    if (type === 'booking') {
+      icon.textContent = '🎉';
+      title.textContent = 'Free Trial Requested!';
+      msg.textContent = 'Thank you! Joseph Joel Jude or a member of the Trinity team will contact you within 24 hours to confirm your free trial session.';
+    } else if (type === 'payment') {
+      icon.textContent = '✅';
+      title.textContent = 'Payment Successful!';
+      msg.textContent = 'Welcome to Trinity Modern Educations! Your enrolment is confirmed. You\'ll receive a confirmation email with your class schedule shortly.';
+    } else if (type === 'bank') {
+      icon.textContent = '✉️';
+      title.textContent = 'Got it!';
+      msg.textContent = 'Please send your bank transfer confirmation to our email. We\'ll activate your account within 24 hours of receipt.';
+    } else if (type === 'paypal') {
+      icon.textContent = '📱';
+      title.textContent = 'Redirecting…';
+      msg.textContent = 'You would now be redirected to PayPal\'s secure checkout. (Demo mode — no actual payment processed.)';
+    }
+
+    modal.classList.add('open');
+  }
+  function closeModal() {
+    document.getElementById('successModal').classList.remove('open');
+  }
+  document.getElementById('successModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+</script>
+
+</body>
+</html>
